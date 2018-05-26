@@ -46,6 +46,15 @@ class Db
         //set nameds to utf8 to show files in unicode format
         $this->connection->query("SET NAMES 'utf8'");
     }
+    //return first record of query result
+    public function first($sql)
+    {
+        $records = $this->query($sql);
+        if ($records == null) {
+            return null;
+        }
+        return $records[0];
+    }
 
     //recive queries comes to db handler and save result into records variable
     public function query($sql)
