@@ -47,6 +47,26 @@ class Db
         $this->connection->query("SET NAMES 'utf8'");
     }
 
+    //recive queries comes to db handler and save result into records variable
+    public function query($sql)
+    {
+        $result = $this->connection->query($sql);
+        if(!$result){
+            echo "Query:" . $sql ." failed due to " . mysqli_error($this->connection);
+            exit;
+        }
+        $records = array();
+        if ($result->num_rows == 0) {
+            return null;
+        }
+        // output data of each row
+        while ($row = $result->fetch_assoc()) {
+            $records[] = $row;
+            // echo "note_id: " . $row["note_id"] . " - Fullname: " . $row["fullname"] . "<br>";
+        }
+        return $records;
+    }
+    
     //read private field value from outside
     public function connection()
     {
