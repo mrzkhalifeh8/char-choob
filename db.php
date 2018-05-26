@@ -52,4 +52,9 @@ class Db
     {
         return $this->connection;
     }
+    //close the connection
+    public function close()
+    {
+        $this->connection->close();
+    }
 }
