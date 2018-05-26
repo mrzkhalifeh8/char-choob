@@ -47,4 +47,9 @@ class Db
         $this->connection->query("SET NAMES 'utf8'");
     }
 
+    //read private field value from outside
+    public function connection()
+    {
+        return $this->connection;
+    }
 }
