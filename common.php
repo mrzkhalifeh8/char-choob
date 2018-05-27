@@ -23,3 +23,21 @@ function br($return = false)
         echo "<br>\n";
     }
 }
+
+function dump($var, $return = false)
+{
+    if (is_array($var)) {
+        $out = print_r($var, true);
+    } elseif (is_object($var, true)) {
+        $out = var_export($var, true);
+    } else {
+        $out = $var;
+    }
+
+    if ($return) {
+        return "\n<pre style='direction: ltr'>\n $out\n </pre>\n";;
+    } else {
+        echo "\n<pre style='direction: ltr'>\n $out\n </pre>\n";
+    }
+
+}
