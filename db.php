@@ -55,6 +55,16 @@ class Db
         }
         return $records[0];
     }
+    public function insert($sql)
+    {
+        $result = $this->connection->query($sql);
+        if(!$result){
+            echo "Query:" . $sql ." failed due to " . mysqli_error($this->connection);
+            exit;
+        }
+        return $result;
+    }
+
 
     //recive queries comes to db handler and save result into records variable
     public function query($sql)
