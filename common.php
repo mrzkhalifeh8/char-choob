@@ -50,3 +50,19 @@ function getCurrentDateTime()
 {
     return date('Y-m-d H:i:s');
 }
+
+/*
+find the occurrence of one string inside another one 
+with casesensetive parameter,
+case sensetive if used and set to true function will check occurrence with 
+exact formant else first turn all characters to lower. then check occurence 
+
+*/
+function strhas($string, $search , $caseSensitive =false) {
+    if($caseSensitive){
+      return strpos($string, $search) !== false;
+    }else{
+      return strpos(strtolower($string), strtolower($search)) !== false;
+    }
+  
+  }
