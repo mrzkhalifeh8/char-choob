@@ -23,7 +23,11 @@ function br($return = false)
         echo "<br>\n";
     }
 }
-
+/*
+output or returns parsable string of a variable
+that you want to export.if $return is used and set,
+to true function will return the variable rep
+*/
 function dump($var, $return = false)
 {
     if (is_array($var)) {
@@ -40,4 +44,9 @@ function dump($var, $return = false)
         echo "\n<pre style='direction: ltr'>\n $out\n </pre>\n";
     }
 
+}
+// function to return current time & date
+function getCurrentDateTime()
+{
+    return date('Y-m-d H:i:s');
 }
