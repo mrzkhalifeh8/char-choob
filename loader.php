@@ -5,3 +5,4 @@ session_start();
 date_default_timezone_set('timezone code');require_once(getcwd() .'/common.php');
 date_default_timezone_set('timezone code');
 require_once(getcwd() .'/config.php');
+require_once(getcwd() .'/locale/' . $config['lang'] .'.php');
