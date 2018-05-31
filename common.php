@@ -51,6 +51,13 @@ function getCurrentDateTime()
     return date('Y-m-d H:i:s');
 }
 
+//encrypt password with salt
+function encryptPassword($password)
+{
+    global $config;
+    return md5($password . $config['salt']);
+
+}
 /*
 find the occurrence of one string inside another one 
 with casesensetive parameter,
