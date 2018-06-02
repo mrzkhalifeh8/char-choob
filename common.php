@@ -58,6 +58,13 @@ function encryptPassword($password)
     return md5($password . $config['salt']);
 
 }
+
+//geting full url
+function getFullUrl(){
+    $fullurl ='http://' . $_SERVER['HTTP_HOST'] .  $_SERVER['REQUEST_URI'];
+    return $fullurl;
+  }
+
 /*
 find the occurrence of one string inside another one 
 with casesensetive parameter,
