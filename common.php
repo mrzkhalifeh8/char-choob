@@ -60,11 +60,16 @@ function encryptPassword($password)
 }
 
 //geting full url
+//getting full url
 function getFullUrl(){
     $fullurl ='http://' . $_SERVER['HTTP_HOST'] .  $_SERVER['REQUEST_URI'];
     return $fullurl;
   }
 
+  //getting the request uri
+  function getRequestUri(){
+    return $_SERVER['REQUEST_URI'];
+  }
 /*
 find the occurrence of one string inside another one 
 with casesensetive parameter,
