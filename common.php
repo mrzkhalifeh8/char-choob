@@ -70,6 +70,11 @@ function getFullUrl(){
   function getRequestUri(){
     return $_SERVER['REQUEST_URI'];
   }
+  //getting base url
+  function baseUrl(){
+    global $config;
+    return $config['base'];
+  }
 /*
 find the occurrence of one string inside another one 
 with casesensetive parameter,
