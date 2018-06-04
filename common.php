@@ -75,6 +75,11 @@ function getFullUrl(){
     global $config;
     return $config['base'];
   }
+  //get full base url 
+  function fullBaseUrl(){
+    global $config;
+    return 'http://' . $_SERVER['HTTP_HOST'] .$config['base'];
+  }
 /*
 find the occurrence of one string inside another one 
 with casesensetive parameter,
