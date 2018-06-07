@@ -58,6 +58,7 @@ class Db
     public function insert($sql)
     {
         $result = $this->connection->query($sql);
+        //check if query faces with errors and show error
         if(!$result){
             echo "Query:" . $sql ." failed due to " . mysqli_error($this->connection);
             exit;
